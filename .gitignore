@@ -1,0 +1,4 @@
+data_raw/
+data_processed/
+.DS_Store
+.ipynb_checkpoints/

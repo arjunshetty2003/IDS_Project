@@ -241,18 +241,11 @@ Contributors
 
 Project developed by:
 
+Aniket Kumar Sah
 Arjun Shetty
-
-If you would like to contribute, feel free to open an issue or submit a pull request.
-
-⸻
-
-License
-
-This project is intended for academic and research purposes.
-
-You may add an open-source license such as MIT License if you plan to publicly distribute the code.
+Barsha Shah
+Divyanshi Jha
 
 ⸻
 
-If you want, I can also help you create a much more professional GitHub README (with badges, dataset stats, workflow diagram, and screenshots) which makes the repository look research-paper level polished.
+

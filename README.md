@@ -1,7 +1,3 @@
-Below is a clean, well-structured README.md generated from the information you provided. It follows standard GitHub README conventions and adds missing sections such as Table of Contents, Features, Dependencies, Examples, Troubleshooting, Contributors, and License.
-
-You can copy this directly into your README.md.
-
 ⸻
 
 IDS_Project

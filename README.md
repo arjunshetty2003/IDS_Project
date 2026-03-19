@@ -1,247 +1,160 @@
-⸻
-
-IDS_Project
+# IDS_Project
 
 Comparative Study of GAN-based Synthetic Data Augmentation for Intrusion Detection Systems
 
-⸻
+## Overview
 
-Introduction
+This repository contains the preprocessing workflows used to prepare intrusion detection datasets for machine learning and synthetic data augmentation experiments.
 
-This repository contains the data preprocessing pipeline for intrusion detection datasets used in the research project:
+Current scope:
+- Data cleaning and schema normalization
+- Feature encoding and normalization
+- Train/test split preparation
+- Class imbalance analysis
+- Exploratory visualization (class distribution and correlation heatmaps)
 
-“Comparative Study of GAN-based Synthetic Data Augmentation for Intrusion Detection Systems.”
+## Reproducibility Policy
 
-The purpose of this repository is to prepare raw intrusion detection datasets for machine learning experiments by performing:
-	•	Data cleaning
-	•	Feature encoding
-	•	Feature normalization
-	•	Class imbalance analysis
-	•	Data visualization
+Rule of thumb:
+- Code and notebooks belong in GitHub.
+- Large datasets do not belong in GitHub history.
+- README must explain exact setup and run steps.
 
-The preprocessing workflow is implemented using Jupyter Notebooks to ensure transparency, reproducibility, and easy experimentation.
+Important:
+- Do not commit files larger than GitHub limits (especially multi-GB CSV files).
+- Keep only small sample files in data folders when needed for demonstration.
 
-⸻
+## Project Structure
 
-Table of Contents
-	•	Project Structure￼
-	•	Datasets Used￼
-	•	Preprocessing Pipeline￼
-	•	Installation￼
-	•	Dependencies￼
-	•	Usage￼
-	•	Output￼
-	•	Examples￼
-	•	Troubleshooting￼
-	•	Contributors￼
-	•	License￼
-
-⸻
-
-Project Structure
-
-IDS_Project
-│
-├── notebooks
+```text
+IDS_Project/
+├── notebooks/
+│   ├── preprocess_cicids2017.ipynb
 │   ├── preprocess_unsw_nb15.ipynb
-│   └── preprocess_cicids2017.ipynb
-│
-├── data_raw
-│   (downloaded datasets placed here)
-│
-├── data_processed
-│   (cleaned datasets generated after preprocessing)
-│
-├── plots
-│   (class distribution charts and correlation heatmaps)
-│
+│   └── NSL-KDD preprocessing.ipynb
+├── data_raw/                  # raw datasets placed manually
+├── data_processed/            # generated cleaned datasets (sample files only in git)
+├── plots/                     # generated figures
+├── logs/                      # additional generated outputs
+├── reports/
+├── requirements.txt
 └── README.md
+```
 
+## Datasets
 
-⸻
+### 1) UNSW-NB15
 
-Datasets Used
+Source: https://research.unsw.edu.au/projects/unsw-nb15-dataset
 
-1. UNSW-NB15 Dataset
+Place files in:
 
-Dataset Source
-https://research.unsw.edu.au/projects/unsw-nb15-dataset
-
-Expected directory structure:
-
+```text
 data_raw/unsw_nb15/
+  UNSW_NB15_training-set.csv
+  UNSW_NB15_testing-set.csv
+```
 
-    UNSW_NB15_training-set.csv
-    UNSW_NB15_testing-set.csv
+### 2) CICIDS2017
 
+Source: https://www.unb.ca/cic/datasets/ids-2017.html
 
-⸻
+Place MachineLearningCVE CSV files in:
 
-2. CICIDS2017 Dataset
-
-Dataset Source
-https://www.unb.ca/cic/datasets/ids-2017.html
-
-Instructions:
-	1.	Download the MachineLearningCSV.zip archive.
-	2.	Extract the CSV files.
-	3.	Place them in:
-
+```text
 data_raw/cic-ids-2017/MachineLearningCVE/
+```
 
+## Reproducibility Guide
 
-⸻
+### 1) Clone repository
 
-Preprocessing Pipeline
-
-The preprocessing workflow implemented in the notebooks performs the following steps:
-
-1. Data Cleaning
-	•	Removed duplicate rows
-	•	Handled missing values
-	•	Replaced infinite values with NaN
-	•	Removed rows containing invalid values
-
-2. Feature Encoding
-	•	Converted categorical features to numerical values
-	•	Used Label Encoding for categorical columns
-
-3. Feature Normalization
-	•	Numerical features were scaled between 0 and 1
-	•	Implemented using MinMaxScaler
-
-4. Train-Test Split
-
-Each dataset was split into:
-	•	70% Training Data
-	•	30% Testing Data
-
-5. Imbalance Analysis
-	•	Analyzed class distribution
-	•	Identified majority and minority attack classes
-
-6. Data Visualization
-
-Generated visual insights including:
-	•	Class distribution bar charts
-	•	Correlation heatmaps
-
-⸻
-
-Installation
-
-Clone the repository:
-
+```bash
 git clone https://github.com/arjunshetty2003/IDS_Project.git
 cd IDS_Project
+```
 
+### 2) Install dependencies
 
-⸻
-
-Dependencies
-
-Install the required Python packages:
-
-pip install pandas numpy scikit-learn matplotlib seaborn jupyter
-
-Main libraries used:
-	•	pandas
-	•	numpy
-	•	scikit-learn
-	•	matplotlib
-	•	seaborn
-	•	jupyter
-
-⸻
-
-Usage
-
-Step 1 — Download datasets
-
-Download datasets from the official sources listed above.
-
-Step 2 — Place datasets in data_raw/
-
-Follow the required directory structure.
-
-Step 3 — Launch Jupyter Notebook
-
-jupyter notebook
-
-Step 4 — Run preprocessing notebooks
-
-Open and execute:
-
-notebooks/preprocess_unsw_nb15.ipynb
-notebooks/preprocess_cicids2017.ipynb
-
-Running these notebooks will reproduce the full preprocessing pipeline.
-
-⸻
-
-Output
-
-After preprocessing, the cleaned datasets will be generated in:
-
-data_processed/
-
-    unsw_nb15_cleaned.csv
-    cicids2017_cleaned.csv
-
-Visualization outputs are stored in:
-
-plots/
-
-These include:
-	•	Class distribution charts
-	•	Correlation heatmaps
-
-⸻
-
-Examples
-
-Example visualizations produced during preprocessing:
-	•	Attack class distribution plots
-	•	Feature correlation heatmaps
-
-These visualizations help analyze dataset imbalance and feature relationships before model training.
-
-⸻
-
-Troubleshooting
-
-Dataset not found error
-
-Ensure datasets are placed exactly in the required folder structure:
-
-data_raw/
-
-Missing libraries
-
-Install dependencies again:
-
+```bash
 pip install -r requirements.txt
+```
 
-Or install manually.
+### 3) Download datasets
 
-Notebook not executing
+Download the datasets from the official source links above.
 
-Ensure Jupyter Notebook is properly installed:
+### 4) Place datasets
 
-pip install jupyter
+Ensure the folder layout exactly matches the paths shown in this README.
 
+### 5) Run preprocessing notebooks
 
-⸻
+```bash
+jupyter notebook
+```
 
-Contributors
+Run notebooks in this order:
+- notebooks/preprocess_cicids2017.ipynb
+- notebooks/preprocess_unsw_nb15.ipynb
+- notebooks/NSL-KDD preprocessing.ipynb
 
-Project developed by:
+## Preprocessing Pipeline (Implemented)
 
-Aniket Kumar Sah
-Arjun Shetty
-Barsha Shah
-Divyanshi Jha
+1. Merge/load raw files
+2. Clean headers and remove duplicates
+3. Handle invalid values (inf and NaN where applicable)
+4. Encode categorical columns (LabelEncoder)
+5. Normalize numeric columns (MinMaxScaler)
+6. Split into train/test (70/30, random_state=42)
+7. Analyze class imbalance
+8. Generate plots
+9. Save cleaned outputs
 
-⸻
+## Outputs
+
+Generated artifacts include:
+- data_processed/unsw_nb15_cleaned.csv
+- data_processed/cicids2017_cleaned.csv (may be too large for GitHub, keep external)
+- plots/cicids2017_plots/Class_Distribution_CICIDS2017.png
+- plots/cicids2017_plots/CorrelationHeatmap_CICIDS2017.png
+- logs/NSL_KDD_CLEANED.csv
+
+## Expected Result
+
+After running notebooks successfully:
+- Cleaned datasets are created in data_processed/ and logs/
+- Class distribution and correlation plots are generated in plots/
+
+## Troubleshooting
+
+### Label column KeyError in CICIDS notebook
+
+Cause: raw header can contain leading spaces.
+
+Fix:
+
+```python
+df.columns = df.columns.str.strip()
+```
+
+### Dataset not found
+
+Verify folder names and file names exactly match the expected layout.
+
+### Missing package
+
+Reinstall dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+## Contributors
+
+- Aniket Kumar Sah
+- Arjun Shetty
+- Barsha Shah
+- Divyanshi Jha
 
 

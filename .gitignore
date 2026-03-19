@@ -1,2 +1,14 @@
 .DS_Store
 .ipynb_checkpoints/
+
+# Large generated artifacts should stay out of git history.
+# Keep only tiny samples (for example sample.csv) in these directories.
+data_processed/cicids2017_cleaned.csv
+data_processed/*.parquet
+data_processed/*.feather
+logs/NSL_KDD_CLEANED.csv
+
+# Optional: ignore all generated processed CSVs except a sample file.
+# Uncomment the next two lines if you want a strict policy.
+# data_processed/*.csv
+# !data_processed/sample.csv

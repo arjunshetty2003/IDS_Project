@@ -55,6 +55,9 @@ data_raw/unsw_nb15/
   UNSW_NB15_testing-set.csv
 ```
 
+Raw dataset folder (Google Drive):
+https://drive.google.com/drive/folders/1hBD_q6HCL5TvmY0i6LAM7Myq-m9ay1Pv
+
 ### 2) CICIDS2017
 
 Source: https://www.unb.ca/cic/datasets/ids-2017.html
@@ -64,6 +67,20 @@ Place MachineLearningCVE CSV files in:
 ```text
 data_raw/cic-ids-2017/MachineLearningCVE/
 ```
+
+Raw dataset folder (Google Drive):
+https://drive.google.com/drive/folders/1eUKK6YCX0VGr0h2ak7Nnd646f9qxCqek
+
+### 3) NSL-KDD
+
+Place raw NSL-KDD file(s) in:
+
+```text
+data_raw/nsl_kdd/
+```
+
+Raw dataset folder (Google Drive):
+https://drive.google.com/drive/folders/1nnDe6Rb3dgTXRmZH2hXA8n12kFvmG6Zs
 
 ## Reproducibility Guide
 
@@ -82,11 +99,16 @@ pip install -r requirements.txt
 
 ### 3) Download datasets
 
-Download the datasets from the official source links above.
+Download the raw datasets from the Google Drive links in the Datasets section.
 
 ### 4) Place datasets
 
 Ensure the folder layout exactly matches the paths shown in this README.
+
+Quick placement checklist:
+- CICIDS2017 raw CSV files -> data_raw/cic-ids-2017/MachineLearningCVE/
+- UNSW-NB15 raw CSV files -> data_raw/unsw_nb15/
+- NSL-KDD raw file(s) -> data_raw/nsl_kdd/
 
 ### 5) Run preprocessing notebooks
 
